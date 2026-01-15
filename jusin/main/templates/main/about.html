@@ -1,0 +1,129 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+
+<!-- HERO ABOUT -->
+<section class="about-hero py-5 text-white">
+  <div class="container py-5 text-center">
+    <h1 class="display-4 fw-bold">Berawal dari Kebun Buah</h1>
+    <p class="lead mt-3">
+      Kami percaya bahwa produk terbaik berasal dari alam, bukan dari proses
+      buatan. jus.in menghadirkan jus buah organik yang diproses secara
+      cold-pressed tanpa bahan tambahan.
+    </p>
+    <a href="#mission" class="btn btn-success btn-lg rounded-pill mt-4">
+      Kenali Cerita Kami
+    </a>
+  </div>
+</section>
+
+<!-- MISSION / VALUES -->
+<section id="mission" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="text-success fw-bold text-uppercase small">
+        Nilai Kami
+      </span>
+      <h2 class="fw-bold mt-2">Kesehatan dalam Setiap Tegukan</h2>
+      <p class="text-muted mt-2">
+        Tanpa bahan tambahan, 100% organik, dan ramah terhadap lingkungan.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm text-center">
+          <div class="card-body p-4">
+            <h5 class="fw-bold">100% Organik</h5>
+            <p class="text-muted">
+              Menggunakan bahan dari kebun organik bersertifikat dan terpercaya.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm text-center">
+          <div class="card-body p-4">
+            <h5 class="fw-bold">Tanpa Bahan Tambahan</h5>
+            <p class="text-muted">
+              Tidak menggunakan pengawet, pewarna, atau pemanis buatan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm text-center">
+          <div class="card-body p-4">
+            <h5 class="fw-bold">Ramah Lingkungan</h5>
+            <p class="text-muted">
+              Menggunakan kemasan dan distribusi yang mendukung keberlanjutan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img
+          src="{% static 'img/about-process.png' %}"
+          class="img-fluid rounded-4 shadow"
+          alt="Proses Pembuatan Jus"
+        />
+      </div>
+
+      <div class="col-lg-6">
+        <span class="text-success fw-bold text-uppercase small">
+          Proses Kami
+        </span>
+        <h2 class="fw-bold mt-2">Dari Kebun ke Gelas Anda</h2>
+
+        <ul class="list-unstyled mt-4">
+          <li class="mb-3">
+            <strong>Pemilihan Buah Segar</strong><br />
+            Buah dipilih setiap hari pada tingkat kematangan terbaik.
+          </li>
+          <li class="mb-3">
+            <strong>Cold Pressed</strong><br />
+            Diproses tanpa panas untuk menjaga kandungan nutrisi alami.
+          </li>
+          <li>
+            <strong>Distribusi Cepat & Higienis</strong><br />
+            Jus dikirim dalam kondisi segar dalam waktu maksimal 48 jam.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5">
+  <div class="container text-center">
+    <div class="bg-success text-white rounded-4 p-5">
+      <h2 class="fw-bold">Siap Merasakan Bedanya?</h2>
+      <p class="mt-2">
+        Bergabunglah dengan pelanggan kami yang memilih gaya hidup sehat melalui
+        jus alami berkualitas.
+      </p>
+      <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+        <a href="{% url 'gallery' %}" class="btn btn-light btn-lg rounded-pill">
+          Lihat Galeri
+        </a>
+        <a
+          href="{% url 'home' %}"
+          class="btn btn-outline-light btn-lg rounded-pill"
+        >
+          Kembali ke Beranda
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+
+<!-- HEADER -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h1 class="fw-bold display-5">Warna dan Cerita jus.in</h1>
+    <p class="lead text-muted mt-3">
+      Jelajahi perjalanan visual kami, mulai dari buah segar pilihan, varian jus
+      unggulan, hingga momen sederhana yang menggambarkan gaya hidup sehat
+      bersama jus.in.
+    </p>
+  </div>
+</section>
+
+<!-- FILTER (TAMPILAN SAJA / STATIS) -->
+<div class="container mb-5">
+  <div class="d-flex justify-content-center gap-2 flex-wrap">
+    <span class="badge bg-success px-4 py-2 rounded-pill">Semua</span>
+    <span class="badge bg-light text-dark px-4 py-2 rounded-pill">
+      Varian Unggulan
+    </span>
+    <span class="badge bg-light text-dark px-4 py-2 rounded-pill">
+      Bahan Alami
+    </span>
+    <span class="badge bg-light text-dark px-4 py-2 rounded-pill"> Momen </span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="container pb-5">
+  <div class="masonry-grid">
+    <!-- ITEM 1 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/order-hero.png' %}" alt="Fresh Orange" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Varian Unggulan</small>
+        <h5 class="fw-bold">Fresh Orange Cold Press</h5>
+        <p class="small">Segar dan kaya vitamin C</p>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/gallery-2.png' %}" alt="Buah Naga Segar" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Bahan Alami</small>
+        <h5 class="fw-bold">Buah Naga</h5>
+        <p class="small">Sumber antioksidan alami</p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/gallery-3.png' %}" alt="Piknik Musim Panas" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Momen</small>
+        <h5 class="fw-bold">Piknik Santai</h5>
+        <p class="small">Sehat dan menyenangkan</p>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/gallery-4.png' %}" alt="Green Detox" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Varian Unggulan</small>
+        <h5 class="fw-bold">Green Detox</h5>
+        <p class="small">Menyegarkan dan menyehatkan</p>
+      </div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/gallery-5.png' %}" alt="Buah Citrus" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Bahan Alami</small>
+        <h5 class="fw-bold">Buah Citrus</h5>
+        <p class="small">Energi alami dari buah segar</p>
+      </div>
+    </div>
+
+    <!-- ITEM 6 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/gallery-6.png' %}" alt="Jalan Santai di Alam" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Momen</small>
+        <h5 class="fw-bold">Menikmati Alam</h5>
+        <p class="small">Teman sehat di setiap langkah</p>
+      </div>
+    </div>
+
+    <!-- ITEM 7 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/jus-orange.png' %}" alt="Fresh Orange" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Varian Unggulan</small>
+        <h5 class="fw-bold">Fresh Orange</h5>
+        <p class="small">
+          Diperas langsung dari jeruk pilihan, kaya vitamin C.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 8 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/jus-merah.png' %}" alt="Ruby Rush" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Varian Unggulan</small>
+        <h5 class="fw-bold">Jus menyegarkan untuk menjaga hidrasi tubuh.</h5>
+        <p class="small">Teman sehat di setiap langkah</p>
+      </div>
+    </div>
+
+    <!-- ITEM 9 -->
+    <div class="masonry-item">
+      <img src="{% static 'img/jus-kuning.png' %}" alt="Tropical Punch" />
+      <div class="masonry-overlay">
+        <small class="text-success fw-bold">Varian Unggulan</small>
+        <h5 class="fw-bold">Tropical Punch</h5>
+        <p class="small">Rasa tropis yang membantu daya tahan tubuh.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

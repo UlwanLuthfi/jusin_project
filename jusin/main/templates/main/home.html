@@ -1,0 +1,199 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+
+<!-- HERO SECTION -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Text -->
+      <div class="col-lg-6">
+        <span class="badge bg-success mb-3">Diproses Segar Setiap Hari</span>
+        <h1 class="display-5 fw-bold">
+          Kesegaran Alami<br />
+          <span class="text-success">dari Buah Pilihan</span>
+        </h1>
+        <p class="lead text-muted">
+          jus.in menghadirkan jus buah segar dari bahan organik berkualitas
+          tinggi yang diproses dengan metode cold-pressed untuk menjaga nutrisi
+          dan rasa alaminya.
+        </p>
+
+        <div class="d-flex gap-3 mt-4">
+          <a
+            href="{% url 'order' %}"
+            class="btn btn-success btn-lg rounded-pill"
+          >
+            Pesan Sekarang
+          </a>
+          <a
+            href="{% url 'gallery' %}"
+            class="btn btn-outline-success btn-lg rounded-pill"
+          >
+            Lihat Galeri
+          </a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="col-lg-6">
+        <img
+          src="{% static 'img/hero-juice.png' %}"
+          class="img-fluid rounded-4 shadow"
+          alt="Jus Buah Segar"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-5">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold">Bahan Organik</h5>
+            <p class="text-muted">
+              Menggunakan buah dan sayur organik pilihan langsung dari petani
+              terpercaya.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold">Tanpa Gula Tambahan</h5>
+            <p class="text-muted">
+              Rasa manis alami dari buah tanpa tambahan gula atau pengawet.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold">Metode Cold Pressed</h5>
+            <p class="text-muted">
+              Proses pemerasan modern yang membantu menjaga kandungan nutrisi
+              dalam jus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-bold">Varian Favorit</h2>
+      <a href="{% url 'gallery' %}" class="text-success fw-semibold">
+        Lihat Semua Produk
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="{% static 'img/jus-orange.png' %}"
+            class="card-img-top"
+            alt="Jus Jeruk"
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Fresh Orange</h5>
+            <p class="text-muted small">Jeruk Navel dan Clementine</p>
+            <p class="fw-bold text-success">Rp 25.000</p>
+            <a href="{% url 'order' %}" class="btn btn-success w-100">
+              Pesan
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="{% static 'img/jus-hijau.png' %}"
+            class="card-img-top"
+            alt="Jus Detox Hijau"
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Green Detox</h5>
+            <p class="text-muted small">Bayam, Kale, dan Apel</p>
+            <p class="fw-bold text-success">Rp 28.000</p>
+            <a href="{% url 'order' %}" class="btn btn-outline-success w-100">
+              Pesan
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="{% static 'img/jus-merah.png' %}"
+            class="card-img-top"
+            alt="Jus Merah"
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Ruby Rush</h5>
+            <p class="text-muted small">Bit, Wortel, Jahe, Lemon</p>
+            <p class="fw-bold text-success">Rp 27.000</p>
+            <a href="{% url 'order' %}" class="btn btn-outline-success w-100">
+              Pesan
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="{% static 'img/jus-kuning.png' %}"
+            class="card-img-top"
+            alt="Jus Tropis"
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Tropical Punch</h5>
+            <p class="text-muted small">Nanas, Mangga, dan Markisa</p>
+            <p class="fw-bold text-success">Rp 25.000</p>
+            <a href="{% url 'order' %}" class="btn btn-outline-success w-100">
+              Pesan
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="py-5">
+  <div class="container">
+    <div class="bg-success text-white rounded-4 p-5 text-center">
+      <h2 class="fw-bold">Diskon 20% untuk Pembelian Pertama</h2>
+      <p>Dapatkan informasi promo dan produk terbaru dari jus.in.</p>
+
+      <form class="row justify-content-center g-2 mt-3">
+        <div class="col-md-4">
+          <input
+            type="email"
+            class="form-control form-control-lg rounded-pill"
+            placeholder="Masukkan alamat email"
+          />
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-dark btn-lg rounded-pill w-100">Daftar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

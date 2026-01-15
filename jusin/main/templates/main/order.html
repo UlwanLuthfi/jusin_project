@@ -1,0 +1,186 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+
+<!-- HERO -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Kesegaran Langsung ke Rumahmu</h1>
+    <p class="lead text-muted">
+      Setiap tegukan membawa langkah menuju hidup yang lebih sehat. Pilih jus
+      favoritmu hari ini.
+    </p>
+  </div>
+</section>
+
+<!-- ORDER SECTION -->
+<section class="py-5">
+  <div class="container">
+    {% if submitted %}
+    <div class="alert alert-success shadow-sm">
+      <h4 class="fw-bold mb-3">Ringkasan Pesanan 🍹</h4>
+
+      <ul class="list-group mb-3">
+        <li class="list-group-item"><strong>Nama:</strong> {{ name }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ email }}</li>
+        <li class="list-group-item">
+          <strong>Jus Pilihan:</strong> {{ juice }}
+        </li>
+        <li class="list-group-item">
+          <strong>Catatan Tambahan:</strong>
+          {{ notes|default:"-" }}
+        </li>
+      </ul>
+
+      <p class="mb-0 text-muted">
+        Terima kasih! Jus kamu sedang kami siapkan dengan segar 🍊
+      </p>
+    </div>
+    {% endif %}
+
+    <div class="row g-5 align-items-start">
+      <!-- LEFT INFO CARD -->
+      <div class="col-lg-5">
+        <div class="card shadow-sm border-0">
+          <img
+            id="juiceImage"
+            src="{% static 'img/order-hero.png' %}"
+            class="card-img-top"
+            alt="Jus Segar"
+          />
+          <div class="card-body">
+            <h4 class="fw-bold" id="juiceTitle">Fresh Orange Cold Press</h4>
+            <p class="text-muted" id="juiceDesc">
+              Jus jeruk segar yang kaya vitamin C dan antioksidan alami.
+            </p>
+
+            <span class="badge bg-success me-2" id="badge1">100% Alami</span>
+            <span class="badge bg-success" id="badge2">Vitamin C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER FORM -->
+      <div class="col-lg-7">
+        <div class="card shadow-sm border-0 p-4">
+          <h3 class="fw-bold mb-3">Form Pemesanan</h3>
+          <p class="text-muted mb-4">
+            Silakan isi data di bawah ini untuk memesan jus pilihanmu.
+          </p>
+
+          <form method="POST">
+            {% csrf_token %}
+
+            <!-- NAME -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Nama Lengkap</label>
+              <input
+                type="text"
+                name="name"
+                class="form-control form-control-lg"
+                placeholder="Masukkan nama lengkap"
+                required
+              />
+            </div>
+
+            <!-- EMAIL -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Alamat Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control form-control-lg"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
+
+            <!-- JUICE -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Pilih Varian Jus</label>
+              <select
+                name="juice"
+                id="juiceSelect"
+                class="form-select form-select-lg"
+                required
+              >
+                <option value="" disabled selected>Pilih jus favorit</option>
+                <option value="Orange">Fresh Orange</option>
+                <option value="Green Detox">Green Detox</option>
+                <option value="Ruby">Ruby Rush</option>
+                <option value="Tropical">Tropical Punch</option>
+              </select>
+            </div>
+
+            <!-- NOTES -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Catatan Tambahan</label>
+              <textarea
+                name="notes"
+                class="form-control"
+                rows="3"
+                placeholder="Contoh: tanpa es, ekstra jahe, catatan pengantaran"
+              ></textarea>
+            </div>
+
+            <!-- SUBMIT -->
+            <button class="btn btn-success btn-lg w-100">
+              Pesan Sekarang 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT GANTI GAMBAR & INFO -->
+<script>
+  const juiceData = {
+    Orange: {
+      image: "{% static 'img/jus-orange.png' %}",
+      title: "Fresh Orange",
+      desc: "Diperas langsung dari jeruk pilihan, kaya vitamin C.",
+      badge1: "Vitamin C",
+      badge2: "Segar Alami",
+    },
+    "Green Detox": {
+      image: "{% static 'img/jus-hijau.png' %}",
+      title: "Green Detox",
+      desc: "Perpaduan kale, bayam, apel, dan lemon untuk detoks alami.",
+      badge1: "Detoks",
+      badge2: "Rendah Gula",
+    },
+    Ruby: {
+      image: "{% static 'img/jus-merah.png' %}",
+      title: "Ruby Rush",
+      desc: "Jus menyegarkan untuk menjaga hidrasi tubuh.",
+      badge1: "Hidrasi",
+      badge2: "Menyegarkan",
+    },
+    Tropical: {
+      image: "{% static 'img/jus-kuning.png' %}",
+      title: "Tropical Punch",
+      desc: "Rasa tropis yang membantu daya tahan tubuh.",
+      badge1: "Imunitas",
+      badge2: "Rasa Tropis",
+    },
+  };
+
+  const select = document.getElementById("juiceSelect");
+  const image = document.getElementById("juiceImage");
+  const title = document.getElementById("juiceTitle");
+  const desc = document.getElementById("juiceDesc");
+  const badge1 = document.getElementById("badge1");
+  const badge2 = document.getElementById("badge2");
+
+  select.addEventListener("change", function () {
+    const juice = juiceData[this.value];
+
+    image.src = juice.image;
+    title.textContent = juice.title;
+    desc.textContent = juice.desc;
+    badge1.textContent = juice.badge1;
+    badge2.textContent = juice.badge2;
+  });
+</script>
+
+{% endblock %}
